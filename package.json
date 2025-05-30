@@ -30,6 +30,7 @@
     "babel-core": "^4.7.16",
     "babel-jest": "^29.7.0",
     "babel-plugin-module-resolver": "^5.0.2",
+    "eslint": "^9.27.0",
     "eslint-plugin-jest": "^28.8.3",
     "globals": "^15.11.0",
     "jest": "^29.7.0",
