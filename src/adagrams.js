@@ -31,16 +31,31 @@ export const drawLetters = () => {
 
 // ----- Wave 2 -----
 export const usesAvailableLetters = (input, lettersInHand) => {
+  const letterCounts = {};
+
+  for (const letter of lettersInHand) {
+    letterCounts[letter] = (letterCounts[letter] || 0) + 1;
+  }
+
+  for (const letter of input.toUpperCase()) {
+    if (!letterCounts[letter]) {
+      return false;
+    }
+    letterCounts[letter] -= 1;
+  }
+
+  return true;
+}
 
 // ----- Wave 3 -----
-export const scoreWord = (word) => {
-  // Implement this method for wave 3
+// export const scoreWord = (word) => {
+//   // Implement this method for wave 3
   
-};
+// };
 
 // ----- Wave 4 -----
-export const highestScoreFrom = (words) => {
-  // Implement this method for wave 4
-};
+// export const highestScoreFrom = (words) => {
+//   // Implement this method for wave 4
+// };
 
 
