@@ -1,5 +1,4 @@
-export const drawLetters = () => {
-  const letterPool = {
+const LETTER_POOL = {
     A: 9, B: 2, C: 2, D: 4, E: 12,
     F: 2, G: 3, H: 2, I: 9, J: 1,
     K: 1, L: 4, M: 2, N: 6, O: 8,
@@ -7,34 +6,39 @@ export const drawLetters = () => {
     U: 4, V: 2, W: 2, X: 1, Y: 2,
     Z: 1,
   };
-  let letterArray = [];
-  for (let[letter, count] of Object.entries(letterPool)) {
+
+// ----- Wave 1 -----
+export const drawLetters = () => {
+  const letterPool = [];
+
+  for (const[letter, count] of Object.entries(LETTER_POOL)) {
     for (let i = 0; i < count; i++) {
-      letterArray.push(letter);
+      letterPool.push(letter);
     }
   }
 
-  let hand = [];
+  const hand = [];
+
   while (hand.length < 10) {
-    const randomIndex = Math.floor(Math.random() * letterArray.length);
-    const letter = letterArray[randomIndex];
+    const randomIndex = Math.floor(Math.random() * letterPool.length);
+    const letter = letterPool[randomIndex];
     hand.push(letter);
-    letterArray.splice(randomIndex, 1);
+    letterPool.splice(randomIndex, 1);
   }
 
   return hand;
 }
 
-console.log(drawLetters());
-
+// ----- Wave 2 -----
 export const usesAvailableLetters = (input, lettersInHand) => {
-  // Implement this method for wave 2
-};
 
+// ----- Wave 3 -----
 export const scoreWord = (word) => {
   // Implement this method for wave 3
+  
 };
 
+// ----- Wave 4 -----
 export const highestScoreFrom = (words) => {
   // Implement this method for wave 4
 };
