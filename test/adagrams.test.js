@@ -70,31 +70,31 @@ describe("Adagrams", () => {
     });
   });
 
-  // describe("usesAvailableLetters", () => {
-  //   it("returns true if the submitted letters are valid against the drawn letters", () => {
-  //     const drawn = ["D", "O", "G", "X", "X", "X", "X", "X", "X", "X"];
-  //     const word = "DOG";
+  describe("usesAvailableLetters", () => {
+    it("returns true if the submitted letters are valid against the drawn letters", () => {
+      const drawn = ["D", "O", "G", "X", "X", "X", "X", "X", "X", "X"];
+      const word = "DOG";
 
-  //     const isValid = usesAvailableLetters(word, drawn);
-  //     expect(isValid).toBe(true);
-  //   });
+      const isValid = usesAvailableLetters(word, drawn);
+      expect(isValid).toBe(true);
+    });
 
-  //   it("returns false when word contains letters not in the drawn letters", () => {
-  //     const drawn = ["D", "O", "X", "X", "X", "X", "X", "X", "X", "X"];
-  //     const word = "DOG";
+    it("returns false when word contains letters not in the drawn letters", () => {
+      const drawn = ["D", "O", "X", "X", "X", "X", "X", "X", "X", "X"];
+      const word = "DOG";
 
-  //     const isValid = usesAvailableLetters(word, drawn);
-  //     expect(isValid).toBe(false);
-  //   });
+      const isValid = usesAvailableLetters(word, drawn);
+      expect(isValid).toBe(false);
+    });
 
-  //   it("returns false when word contains repeated letters more than in the drawn letters", () => {
-  //     const drawn = ["D", "O", "G", "X", "X", "X", "X", "X", "X", "X"];
-  //     const word = "GOOD";
+    it("returns false when word contains repeated letters more than in the drawn letters", () => {
+      const drawn = ["D", "O", "G", "X", "X", "X", "X", "X", "X", "X"];
+      const word = "GOOD";
 
-  //     const isValid = usesAvailableLetters(word, drawn);
-  //     expect(isValid).toBe(false);
-  //   });
-  // });
+      const isValid = usesAvailableLetters(word, drawn);
+      expect(isValid).toBe(false);
+    });
+  });
 
   describe("scoreWord", () => {
     const expectScores = (wordScores) => {
@@ -133,7 +133,7 @@ describe("Adagrams", () => {
     });
   });
 
-  describe.skip("highestScoreFrom", () => {
+    describe("highestScoreFrom", () => {
     it("returns a hash that contains the word and score of best word in an array", () => {
       const words = ["X", "XX", "XXX", "XXXX"];
       const correct = { word: "XXXX", score: scoreWord("XXXX") };
@@ -145,7 +145,7 @@ describe("Adagrams", () => {
       const words = ["XXX", "XXXX", "X", "XX"];
       const correct = { word: "XXXX", score: scoreWord("XXXX") };
 
-      throw "Complete test by adding an assertion";
+      expect(highestScoreFrom(words)).toEqual(correct);
     });
 
     describe("in case of tied score", () => {
